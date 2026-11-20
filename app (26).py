@@ -1,3 +1,4 @@
+%%writefile app.py
 import streamlit as st
 import math
 import re
@@ -77,8 +78,7 @@ VAULT_VERSIONS = {
                 ),
                 "formula": r"$a^2 + b^2 = c^2$",
                 "answer_val": -13.0 / 6.0,
-                "answer_disp": r"$-\frac{13}{6}\text{ ft/s}$ ($\approx -2.17\text{ ft/s}$)",
-                "hint": r"Since $b = 5$ is constant and $a = 12$, $c = 13$. Differentiate $a^2 + 5^2 = c^2$ with respect to $t$: $2a\frac{da}{dt} = 2c\frac{dc}{dt}$."
+                "answer_disp": r"$-\frac{13}{6}\text{ ft/s}$ ($\approx -2.17\text{ ft/s}$)"
             },
             {
                 "title": "Lock 2: Linear Approximation",
@@ -88,8 +88,7 @@ VAULT_VERSIONS = {
                 ),
                 "formula": r"$L(x) = f(a) + f'(a)(x - a)$",
                 "answer_val": 2.99,
-                "answer_disp": r"$2.99$",
-                "hint": r"$f(8) = 3$ and $f'(8) = \frac{1}{27}$, so $L(x) = 3 + \frac{1}{27}(x - 8)$. Evaluate at $x = 7.73$ since $7.73 + 19 = 26.73$."
+                "answer_disp": r"$2.99$"
             },
             {
                 "title": "Lock 3: Mean Value Theorem",
@@ -99,8 +98,7 @@ VAULT_VERSIONS = {
                 ),
                 "formula": r"$f'(c) = \frac{f(b) - f(a)}{b - a}$",
                 "answer_val": math.sqrt(2.0),
-                "answer_disp": r"$\sqrt{2}$ ($\approx 1.414$)",
-                "hint": r"Compute $\frac{f(2) - f(1)}{2 - 1} = \frac{4 - 5}{1} = -1$, then set $f'(c) = 1 - \frac{4}{c^2} = -1$. You can enter `sqrt(2)` or `1.414`."
+                "answer_disp": r"$\sqrt{2}$ ($\approx 1.414$)"
             },
             {
                 "title": "Lock 4: Extrema of a Polynomial",
@@ -110,8 +108,7 @@ VAULT_VERSIONS = {
                 ),
                 "formula": r"Critical numbers occur where $f'(x) = 0$ or $f'(x)$ does not exist.",
                 "answer_val": 1.0,
-                "answer_disp": r"$1$ (at the point $(0, 1)$)",
-                "hint": r"Factor $f'(x) = 12x^3 - 24x^2 + 12x = 12x(x - 1)^2$. Test the critical numbers $x = 0$ and $x = 1$."
+                "answer_disp": r"$1$ (at the point $(0, 1)$)"
             },
             {
                 "title": "Lock 5: L'Hôpital's Rule",
@@ -120,8 +117,7 @@ VAULT_VERSIONS = {
                 ),
                 "formula": r"L'Hôpital's Rule (for $\frac{0}{0}$ or $\frac{\infty}{\infty}$): $\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}$",
                 "answer_val": -4.5,
-                "answer_disp": r"$-\frac{9}{2}$ or $-4.5$",
-                "hint": r"This is a $\frac{0}{0}$ indeterminate form. Apply L'Hôpital's Rule three times until the denominator becomes $6$."
+                "answer_disp": r"$-\frac{9}{2}$ or $-4.5$"
             },
             {
                 "title": "Lock 6: Profit Optimization (Final Lock)",
@@ -133,8 +129,7 @@ VAULT_VERSIONS = {
                 ),
                 "formula": r"$\text{Revenue } R(x) = x \cdot p(x)$  and  $\text{Profit } P(x) = R(x) - C(x)$",
                 "answer_val": 120.0,
-                "answer_disp": r"$120\text{ keyboards}$ (Max weekly profit: $\$9,300$)",
-                "hint": r"$P(x) = (220x - 0.5x^2) - (1500 + 40x + 0.25x^2) = -0.75x^2 + 180x - 1500$. Set $P'(x) = 0$."
+                "answer_disp": r"$120\text{ keyboards}$ (Max weekly profit: $\$9,300$)"
             }
         ]
     },
@@ -153,8 +148,7 @@ VAULT_VERSIONS = {
                 ),
                 "formula": r"$a^2 + b^2 = c^2$",
                 "answer_val": -3.4,
-                "answer_disp": r"$-\frac{17}{5}\text{ ft/s}$ or $-3.4\text{ ft/s}$",
-                "hint": r"Since $b = 8$ is constant and $a = 15$, $c = 17$. Differentiate $a^2 + 8^2 = c^2$ with respect to $t$: $2a\frac{da}{dt} = 2c\frac{dc}{dt}$."
+                "answer_disp": r"$-\frac{17}{5}\text{ ft/s}$ or $-3.4\text{ ft/s}$"
             },
             {
                 "title": "Lock 2: Linear Approximation",
@@ -164,8 +158,7 @@ VAULT_VERSIONS = {
                 ),
                 "formula": r"$L(x) = f(a) + f'(a)(x - a)$",
                 "answer_val": 3.99,
-                "answer_disp": r"$3.99$",
-                "hint": r"$f(8) = 4$ and $f'(8) = \frac{1}{48}$, so $L(x) = 4 + \frac{1}{48}(x - 8)$. Evaluate at $x = 7.52$ since $7.52 + 56 = 63.52$."
+                "answer_disp": r"$3.99$"
             },
             {
                 "title": "Lock 3: Mean Value Theorem",
@@ -175,8 +168,7 @@ VAULT_VERSIONS = {
                 ),
                 "formula": r"$f'(c) = \frac{f(b) - f(a)}{b - a}$",
                 "answer_val": math.sqrt(3.0),
-                "answer_disp": r"$\sqrt{3}$ ($\approx 1.732$)",
-                "hint": r"Compute $\frac{f(3) - f(1)}{3 - 1} = \frac{6 - 10}{2} = -2$, then set $f'(c) = 1 - \frac{9}{c^2} = -2$. You can enter `sqrt(3)` or `1.732`."
+                "answer_disp": r"$\sqrt{3}$ ($\approx 1.732$)"
             },
             {
                 "title": "Lock 4: Extrema of a Polynomial",
@@ -186,8 +178,7 @@ VAULT_VERSIONS = {
                 ),
                 "formula": r"Critical numbers occur where $f'(x) = 0$ or $f'(x)$ does not exist.",
                 "answer_val": 5.0,
-                "answer_disp": r"$5$ (at the point $(0, 5)$)",
-                "hint": r"Factor $f'(x) = 12x^3 - 48x^2 + 48x = 12x(x - 2)^2$. Test the critical numbers $x = 0$ and $x = 2$."
+                "answer_disp": r"$5$ (at the point $(0, 5)$)"
             },
             {
                 "title": "Lock 5: L'Hôpital's Rule",
@@ -196,8 +187,7 @@ VAULT_VERSIONS = {
                 ),
                 "formula": r"L'Hôpital's Rule (for $\frac{0}{0}$ or $\frac{\infty}{\infty}$): $\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}$",
                 "answer_val": -4.0 / 3.0,
-                "answer_disp": r"$-\frac{4}{3}$ ($\approx -1.333$)",
-                "hint": r"This is a $\frac{0}{0}$ indeterminate form. Apply L'Hôpital's Rule three times until the denominator becomes $6$."
+                "answer_disp": r"$-\frac{4}{3}$ ($\approx -1.333$)"
             },
             {
                 "title": "Lock 6: Profit Optimization (Final Lock)",
@@ -209,8 +199,7 @@ VAULT_VERSIONS = {
                 ),
                 "formula": r"$\text{Revenue } R(x) = x \cdot p(x)$  and  $\text{Profit } P(x) = R(x) - C(x)$",
                 "answer_val": 140.0,
-                "answer_disp": r"$140\text{ headphones}$ (Max weekly profit: $\$13,500$)",
-                "hint": r"$P(x) = (260x - 0.6x^2) - (1200 + 50x + 0.15x^2) = -0.75x^2 + 210x - 1200$. Set $P'(x) = 0$."
+                "answer_disp": r"$140\text{ headphones}$ (Max weekly profit: $\$13,500$)"
             }
         ]
     }
@@ -280,7 +269,7 @@ for idx, lock in enumerate(v_data["locks"]):
                 f"**Vault Digit #{idx + 1} Revealed:** **`{passcode_digits[idx]}`**"
             )
         else:
-            in_col, btn_col, hint_col = st.columns([2, 1, 1])
+            in_col, btn_col = st.columns([3, 1])
             with in_col:
                 user_raw = st.text_input(
                     f"Enter your answer for Lock {idx + 1}:",
@@ -291,13 +280,6 @@ for idx, lock in enumerate(v_data["locks"]):
                 st.write("")
                 st.write("")
                 check_clicked = st.button("Check Answer", key=f"btn_{selected_version}_{idx}", use_container_width=True)
-            with hint_col:
-                st.write("")
-                st.write("")
-                show_hint = st.checkbox("Show Hint", key=f"hint_{selected_version}_{idx}")
-
-            if show_hint:
-                st.warning(f"💡 **Hint:** {lock['hint']}")
 
             if check_clicked:
                 parsed = parse_math_answer(user_raw)
